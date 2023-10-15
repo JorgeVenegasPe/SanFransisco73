@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500&display=swap');
+:root {
+    --color-primary: #49c691;
+    --color-danger:#6a91f4;
+    --color-success: #b4d77b;
+    --color-warning: #6a91f4;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-background:#FAFAFA;
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+/*========== dark mode ===============*/
+.dark-theme-variables {
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 14px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.88rem;
+    background: var(--color-background);
+    user-select: none;
+    overflow-x: hidden;
+}
+
+header{
+    z-index: 99999;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(20px);
+    transition: .6s ease;
+}
+
+.nav-bar{
+    position: relative;
+    height: calc(4rem + 1rem);
+    max-width: 1250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    transition: .6s ease;
+}
+
+.nav-bar .logo{
+     color: var(--first-color);
+     font-size: 1.3rem;
+     font-weight: 600;
+}
+.logo img{
+    width: 70px;
+    display: flex;
+    align-items: center;
+}
+.nav-items a{
+    color: var(--first-color);
+    font-size: var(--normal-font-size);
+    font-weight: 500;
+}
+
+.nav-items a.active{
+    color: var(--second-color);
+}
+.nav-items a:not(:last-child){
+    margin-right: 50px; 
+}
+.nav-items a:hover{
+    color: var(--second-color);
+}
+
+.nav-items .button-signup{
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: .6s ease;
+}
+.nav-items .button-signup:hover{
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+.info .button-signup{
+    background-color: black;
+    color: white;
+    padding: 15px 55px;
+    border-radius: 10px;
+    font-size: 13px;
+    margin: auto;
+    transition: .6s ease;
+}
+.info .button-signup:hover{
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info{    
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.home{
+    position: relative;
+    max-width: 1550px;
+    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4rem 2rem;
+    flex-direction: column;
+} 
+
+
+.home .home-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.home-container .info h2{
+    font-size: 4em;
+    font-weight: 600;
+    line-height: 70px;
+    text-align: center;
+    max-width: 1050px;
+}
+
+.home-container .info p {
+    color: var(--third-color);
+    font-size: var(--normal-font-size);
+    text-align: center;
+}
