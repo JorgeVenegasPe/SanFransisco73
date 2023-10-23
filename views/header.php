@@ -4,7 +4,7 @@
         <div class="navigation">
             <div class="nav-items">
                 <a href="#nosotros">Nosotros</a>
-                <a href="#servicios">Servicios</a>
+                <a href="#services">Servicios</a>
                 <a href="#reserva">Reservar cita</a>
                 <a href="#ia">IA</a>
             </div>

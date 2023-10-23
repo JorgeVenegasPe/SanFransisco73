@@ -23,7 +23,7 @@
                             </li>
                             <li class="footer__list-item">
                                 <a href="https://www.tiktok.com/@jorge.pe_" target="_blank" class="footer__list-link">
-                                    <i class="ri-tiktok-line"></i><i class="ri-tiktok-line"></i>
+                                <i class="fa-brands fa-tiktok"></i>
                                 </a>
                             </li>
                         </ul>
