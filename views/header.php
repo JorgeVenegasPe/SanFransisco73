@@ -1,12 +1,12 @@
 <header>
     <div class="nav-bar">
-        <a href="" class="logo"><img src="resources/images/LogoSF3.png" alt=""></a>
+        <a href="#home" class="logo"><img src="resources/images/LogoSF3.png" alt=""></a>
         <div class="navigation">
             <div class="nav-items">
-                <a href="#home">Home</a>
-                <a href="#Catalogo">Catalogo</a>
-                <a href="#Servicios">Servicios</a>
-                <a href="#servicios">IA</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#reserva">Reservar cita</a>
+                <a href="#ia">IA</a>
             </div>
         </div> 
         <div class="navigation">
