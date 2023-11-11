@@ -19,13 +19,13 @@
     <section class="home" id="home">
         <div class="home-container">
             <div class="info paragraph">
-                <p style="--d: 0s; letter-spacing:3px" class="uno">Una herramienta de IA diseñada para saber el tipo de corte según su cráneo</p>
-                <h2 style="--d: .1s;" class="dos">Recomendación de cortes de cabello Escaneo craneal <spam >usando IA</spam></h2>
-                <a style="--d: .2s;" class="button-signup tres" href="#contacto">Comenzar ahora</a>
-                <p style="--d: .3s; letter-spacing:3px" class="uno">7 Días Prueba gratuita | Uso para todos los clientes</p>
+                <p style="--d: 0s; letter-spacing:3px" class="uno">aaaa</p>
+                <h2 style="--d: .1s;" class="dos">aaa<spam >aaa</spam></h2>
+                <a style="--d: .2s;" class="button-signup tres" href="#contacto">aaa</a>
+                <p style="--d: .3s; letter-spacing:3px" class="uno">aaaaaaaa aaaaaa</p>
             </div>
             <br>
-            <a style="--d: .4s;"  href="#nosotros" class="scroll-down ">Scroll Down <i class="fas fa-arrow-down"></i></a>
+            <a style="--d: .4s;"  href="#nosotros" class="scroll-down ">aaa<i class="fas fa-arrow-down"></i></a>
         </div>
     </section>
     <section class="degrade section-degrade" >
