@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./resources/css/Login.css" />
+    <link rel="stylesheet" href="resources/css/Login.css" />
   </head>
   <body>
     <div class="container">
@@ -91,7 +91,7 @@
             </button>
           </div>
           <div class="layout image">
-            <img src="../SanFransisco73-main/resources/images/SVG/log.svg" class="image" alt="" />
+            <img src="resources/images/SVG/log.svg" class="image" alt="" />
           </div>
 
         </div>
@@ -110,13 +110,13 @@
           </div>
 
           <div class="layout2 image">
-            <img src="../SanFransisco73-main/resources/images/SVG/register.svg" class="image" alt="" />
+            <img src="resources/images/SVG/register.svg" class="image" alt="" />
           </div>
         </div>
       </div>
     </div>
 
-    <script src="./resources/js/app.js"></script>
+    <script src="resources/js/app.js"></script>
     <!-- <script src="./resources/js/Registro.js"></script> -->
   </body>
 </html>

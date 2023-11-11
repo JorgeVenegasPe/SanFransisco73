@@ -3,9 +3,9 @@
         <a href="#home" class="logo"><img src="resources/images/LogoSF3.png" alt=""></a>
         <div class="navigation">
             <div class="nav-items">
-                <a href="#nosotros">Nosotros</a>
-                <a href="#services">Servicios</a>
-                <a href="#reserva">Reservar cita</a>
+                <a href="index.php#nosotros">Nosotros</a>
+                <a href="index.php#services">Servicios</a>
+                <a href="index.php#reserva">Reservar cita</a>
                 <a href="Int-Art.php">IA</a>
             </div>
         </div> 
