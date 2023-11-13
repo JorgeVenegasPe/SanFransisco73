@@ -20,7 +20,7 @@
                     <h2 style="--d: .1s;" class="dos">Recomendación de cortes de cabello Escaneo craneal <spam >usando IA</spam></h2>
                 </div>
                 <a style="--d: .2s;" class="button-signup tres" href="Int-Art.php">Comenzar ahora</a>
-                <p style="--d: .3s; letter-spacing:3px" class="uno"> Uso gratuito para todos los clientes | Registrate y Obten 3 pruebas gratuitas</p>
+                <p style="--d: .3s; letter-spacing:3px" class="uno"> Uso gratuito para todos los clientes | Registrate y obten la ia</p>
             </div>
         </div>
     </section>

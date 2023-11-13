@@ -12,15 +12,15 @@
         <div class="signin-signup">
 
           <!-- LOGIN -->
-          <form action="#" class="sign-in-form"  id="login-form">
+          <form method="post" action="Controlador/Login/ControllerLogin.php" class="sign-in-form"  id="login-form">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="text" placeholder="Username" name="usu" id="usu" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password"  name="pass" id="pass"/>
             </div>
             <input type="submit" value="Login" class="btn solid" />
             <p class="social-text">Or Sign in with social platforms</p>
@@ -42,19 +42,20 @@
 
           <!-- REGISTRO  -->
 
-          <form action="#" class="sign-up-form" id="signup-form">
+          <form action="Crud/guardarUsuario.php" method="post" class="sign-up-form" id="signup-form">
             <h2 class="title">Sign up</h2>
+            
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="text" placeholder="Username" name="usuario" id="usuario" />
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
+              <input type="email" placeholder="Email" name="email" id="email"/>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" name="password" id="password"/>
             </div>
             <input type="submit" class="btn" value="Sign up" />
             <p class="social-text">Or Sign up with social platforms</p>

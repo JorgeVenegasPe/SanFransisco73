@@ -19,13 +19,11 @@
     <section class="home" id="home">
         <div class="home-container">
             <div class="info paragraph">
-                <p style="--d: 0s; letter-spacing:3px" class="uno">aaaa</p>
-                <h2 style="--d: .1s;" class="dos">aaa<spam >aaa</spam></h2>
-                <a style="--d: .2s;" class="button-signup tres" href="#contacto">aaa</a>
-                <p style="--d: .3s; letter-spacing:3px" class="uno">aaaaaaaa aaaaaa</p>
+                <h2 style="--d: .1s;" class="dos">San Fransisco<spam > 73</spam></h2>
+                <p style="--d: .3s; letter-spacing:3px" class="uno">Barberia y Salon</p>
             </div>
             <br>
-            <a style="--d: .4s;"  href="#nosotros" class="scroll-down ">aaa<i class="fas fa-arrow-down"></i></a>
+            <a style="--d: .4s;"  href="#nosotros" class="scroll-down ">Ver más<i class="fas fa-arrow-down"></i></a>
         </div>
     </section>
     <section class="degrade section-degrade" >
@@ -82,7 +80,7 @@
                             En San Fransisco 73, ofrecemos una amplia gama de cortes, desde los estilos clásicos atemporales hasta las tendencias más modernas. Disfrute de un servicio de calidad y salga con un aspecto fresco y confiado en cada visita."
                         </p>
                         <br>
-						<a href="#" class="card-cta" id="enlace">Ver mas &rarr;</a>
+						<a href="cortes.php" class="card-cta" id="enlace">Ver mas &rarr;</a>
                     </div>
                 </article>
                 <article class="card" style="background: url('resources/images/pintado.jpg') center no-repeat;background-size:100%;">

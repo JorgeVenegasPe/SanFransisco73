@@ -16,15 +16,18 @@
   <?php
    require 'views/header.php';
   ?>
-  <section class="IA" id="canvasSection">
-    <video id="video" class="video" width="320" height="560" autoplay muted></video>
+  <section class="IA-imagen" id="canvasSection">
+    <div style="display:flex;flex-direction:row">  
+      <div class="video-captado">
+        <video id="video" class="video" width="320" height="560" autoplay muted></video>
+        <canvas id="capturaCanvas"  width="320" height="560"></canvas>
+      </div>
+    </div>
+    <div style="gap:20px; display:flex">
+      <button class="capturarBtn" id="flechaIzquierda"><</button>
+      <button class="capturarBtn" id="capturarBtn">Capturar</button>
+      <button class="capturarBtn" id="flechaDerecha">></button>
+    </div>
   </section>
-  <div>
-    <label for="shapeSelect">Seleccionar forma:</label>
-    <select id="shapeSelect">
-      <option value="circle">Circular</option>
-      <option value="triangle">Triangular</option>
-    </select>
-  </div>
 </body>
 </html>
