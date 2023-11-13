@@ -4,10 +4,16 @@ class control{
 	private $model;
 
 	public function __construct(){
-		require_once("../../Modelo/Corte/modelcortes.php");
+		require_once("../Modelo/Corte/modelcortes.php");
 		$this->model=new userModel();
 	}
-	
+	public function InsertarProducto($rostro,$caracteristica,$imagen,$descripcion) {
+        $id = $this->model->InsertarProducto($rostro,$caracteristica,$imagen,$descripcion);
+        return ($id != false) ? header("Location: ../formulario-guardar.php") : header("Location: ../formulario-guardar.php");
+    }
+	public function verCortes() {
+		return ($this->model->getVerCortes()) ?: false;
+	}
     public function ver_corte_1(){
     	return ($this->model->ver_corte_1()) ? $this->model->ver_corte_1():false;
     }

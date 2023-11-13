@@ -2,11 +2,33 @@
 class userModel{
 	private $PDO;
 	public function __construct(){
-        require("../../Conexion/conexion.php");
+        require("../Conexion/conexion.php");
 		$con=new conexion();
 		$this->PDO=$con->conexion();
 	}
-	
+	public function InsertarProducto($rostro,$caracteristica,$imagen,$descripcion) {
+        $statement=$this->PDO->prepare("INSERT INTO tb_rostro(rostro,caracteristicas,imagen, descripcion) VALUES (:rostro, :caracteristica, :imagen, :descripcion)");
+        $statement->bindParam(':rostro', $rostro);
+        $statement->bindParam(':caracteristica', $caracteristica);
+        $statement->bindParam(':imagen', $imagen);
+        $statement->bindParam(':descripcion', $descripcion);
+
+        return ($statement->execute()) ? $this->PDO->lastInsertId() : false;
+    }
+	public function getVerCortes() {
+		try {
+			$statement = $this->PDO->prepare("SELECT imagen FROM tb_rostro");
+			if ($statement->execute()) {
+				return $statement->fetchAll(PDO::FETCH_COLUMN, 0);
+			} else {
+				throw new Exception("Error al ejecutar la consulta.");
+			}
+		} catch (Exception $e) {
+			// Manejar el error según tus necesidades
+			error_log("Error en getVerCortes: " . $e->getMessage());
+			return false;
+		}
+	}
 	public function ver_corte_1(){
 		$statement=$this->PDO->prepare("SELECT * FROM tb_cortes WHERE id_cortes=1;");
 		return($statement->execute())?$statement->fetchaLL():false;

@@ -5,6 +5,37 @@ const flechaDerecha = document.getElementById('flechaDerecha');
 const capturaCanvas = document.getElementById('capturaCanvas');
 
 let isCaptured = false;
+let images = []; // Almacenará las rutas de las imágenes obtenidas desde la base de datos
+
+fetch('Controlador/Corte/ControllorCorte.php')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Error al cargar las imágenes desde el servidor');
+    }
+    return response.json();
+  })
+  .then(data => {
+    images = data;
+    let currentImageIndex = 0;
+    let overlayImage = new Image();
+    
+    overlayImage.onload = () => {
+      updateOverlayImage();
+    };
+
+    Promise.all([
+      faceapi.nets.tinyFaceDetector.loadFromUri('models'),
+      faceapi.nets.faceLandmark68Net.loadFromUri('models'),
+      faceapi.nets.faceRecognitionNet.loadFromUri('models'),
+      faceapi.nets.faceExpressionNet.loadFromUri('models')
+    ]).then(() => {
+      overlayImage.src = images[currentImageIndex];
+      startVideo();
+    });
+  })
+  .catch(error => {
+    console.error(error);
+  });
 
 capturarBtn.addEventListener('click', () => {
   if (!isCaptured) {
@@ -13,15 +44,7 @@ capturarBtn.addEventListener('click', () => {
   }
 });
 
-
-
 let currentImageIndex = 0;
-const images = [
-  'resources/images/corazon.PNG',
-  'resources/images/ovalado.PNG',
-  'resources/images/diamante.PNG',
-  'resources/images/cuadrado.PNG'
-];
 
 let overlayImage = new Image();
 overlayImage.onload = () => {
@@ -61,8 +84,10 @@ video.addEventListener('play', () => {
     setInterval(async () => {
       const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions();
       const resizedDetections = faceapi.resizeResults(detections, displaySize);
+      
 
       canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+      faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
 
       if (detections.length > 0) {
         const box = resizedDetections[0].detection.box;
