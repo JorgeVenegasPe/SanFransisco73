@@ -2,7 +2,7 @@
 class userModel{
 	private $PDO;
 	public function __construct(){
-        require("../../Conexion/conexion.php");
+		require_once("../Conexion/conexion.php");
 		$con=new conexion();
 		$this->PDO=$con->conexion();
 	}
@@ -103,3 +103,4 @@ class userModel{
 
 }
 ?>
+

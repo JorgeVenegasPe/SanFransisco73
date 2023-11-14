@@ -4,7 +4,7 @@ class control{
 	private $model;
 
 	public function __construct(){
-		require_once("../../Modelo/Corte/modelcortes.php");
+		require_once(__DIR__ . '/../../Modelo/Corte/modelcortes.php');
 		$this->model=new userModel();
 	}
 	

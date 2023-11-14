@@ -109,3 +109,48 @@ call sp_insert_cortes('Moustache','¡Presentamos el estilo Moustache, la expresi
 call sp_insert_cortes('Beard','¡Presentamos el combo perfecto: el estilo Beard y Moustache, la expresión definitiva de masculinidad y distinción facial! Prepárate para un look que combina la robustez de una barba bien cuidada con la elegancia distintiva de un bigote, diseñado para aquellos que buscan destacar con un toque de sofisticación y carácter.','C:\xampp\htdocs\imagenes\beard.jpg',50.00, 5);
 call sp_insert_cortes('Chin Strap','¡Presentamos el estilo Chin Strap, una declaración de moda audaz y definida para aquellos que buscan destacar con un toque distintivo! Prepárate para un look que destaca la mandíbula con una línea nítida y elegante, diseñado para resaltar la estructura facial con un toque moderno..','C:\xampp\htdocs\imagenes\chin.png',50.00, 5);
 call sp_insert_cortes('Flequillo Largo','¡Presentamos el estilo Flequillo Largo, la fusión perfecta de juventud y elegancia desenfadada! Prepárate para un look que agrega un toque juguetón y moderno a tu apariencia, diseñado para aquellos que buscan un peinado que combine comodidad y estilo.','C:\xampp\htdocs\imagenes\flequillolargo.jpeg',50.00, 5);
+
+--Para ver el tipo de rostro y su corte 
+CREATE PROCEDURE sp_obtener_info_cortes_por_rostro(
+    IN p_tipo_rostro VARCHAR(50)
+)
+BEGIN
+    SELECT r.rostro, r.caracteristicas, r.descripcion AS descripcion_rostro,
+           c.nombre_corte, c.descripcion AS descripcion_corte, c.imagen, c.precio
+    FROM tb_rostro r
+    LEFT JOIN tb_cortes c ON r.id_rostro = c.id_rostro
+    WHERE r.rostro = p_tipo_rostro;
+END;
+
+CREATE PROCEDURE sp_rostro_corte(IN tipoRostro VARCHAR(50))
+BEGIN
+    SELECT c.*
+    FROM tb_cortes c
+    INNER JOIN tb_rostros r ON c.id_rostro = r.id_rostro
+    WHERE r.nombre_rostro = tipoRostro;
+END;
+
+--Para ver el tipo de rostro y su corte 
+DELIMITER //
+CREATE PROCEDURE sp_cortes_por_rostro(
+    IN p_tipo_rostro VARCHAR(50)
+)
+BEGIN
+    SELECT r.rostro, r.caracteristicas, r.descripcion, c.nombre_corte, c.descripcion, c.imagen, c.precio
+    FROM tb_rostro r
+    LEFT JOIN tb_cortes c ON r.id_rostro = c.id_rostro
+    WHERE r.rostro = p_tipo_rostro;
+END //
+DELIMITER ;
+
+--Para ver la imagen
+CREATE PROCEDURE sp_cortes_por_rostro(
+    IN p_tipo_rostro VARCHAR(50)
+)
+BEGIN
+    SELECT r.rostro, r.caracteristicas, r.descripcion, c.nombre_corte, c.descripcion, 
+           CONVERT(c.imagen USING utf8) AS imagen_base64, c.precio
+    FROM tb_rostro r
+    LEFT JOIN tb_cortes c ON r.id_rostro = c.id_rostro
+    WHERE r.rostro = p_tipo_rostro;
+END;
