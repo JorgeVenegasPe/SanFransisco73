@@ -30,7 +30,10 @@ class userModel{
         // Devolver los resultados con imágenes en formato Base64
         return $resultados;
     }
-    
+    public function ver_corte(){
+		$statement=$this->PDO->prepare("SELECT * FROM tb_cortes ");
+		return($statement->execute())?$statement->fetchaLL():false;
+	}
 }
 
 ?>

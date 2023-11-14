@@ -739,17 +739,6 @@ header.sticky .nav-bar{
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .video-captado{
     display: flex;
     justify-content: center;
@@ -761,7 +750,7 @@ header.sticky .nav-bar{
   }
   .IA-imagen{
       position: relative;
-      max-width: 1550px;
+      width: 600px;
       min-height: 100vh;
       margin-left: auto;
       display: flex;

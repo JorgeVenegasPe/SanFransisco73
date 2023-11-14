@@ -18,5 +18,9 @@ class RostroController {
         // Devolver la información de los cortes
         return $infoCortes;
     }
+
+    public function ver_corte(){
+    	return ($this->model->ver_corte()) ? $this->model->ver_corte():false;
+    }
 }
 ?>
