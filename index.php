@@ -119,30 +119,79 @@
     <section class="degrade section-degrade reverse" >
     </section>
     <section class="reserva section" id="reserva">
-        <div class="service-list flex-center">
-            <div class="service-card">
-                <i class="fa-solid fa-location-dot"></i>
-                <h3 style="letter-spacing:3px">Locales</h3>
-                <p style="letter-spacing:2px">Contamos con más de 7 locales en todo Lima Metropolitana</p>
-                <div class="learn-more-btn">Ver ubicaciones<i class="fas fa-long-arrow-alt-right"></i></div>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-paper-plane"></i>
-                <h3 style="letter-spacing:3px">Reservas</h3>
-                <p style="letter-spacing:2px">Genera un cita virtual hoy y asiste sin problemas a nuestros locales.</p>
-                <div class="learn-more-btn">Reservar un cita<i class="fas fa-long-arrow-alt-right"></i></div>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-calendar"></i>
-                <h3 style="letter-spacing:3px">Horarios de atención</h3>
-                <p style="letter-spacing:2px">
-                    Lun - Sab 10 am a 8:30 pm
-                <br>
-                    Domingos 11 am a 5:30 pm
-                </p>
-                <div class="learn-more-btn">Contactanos<i class="fas fa-long-arrow-alt-right"></i></div>
-            </div>
-        </div>
+        <ul class="service-list">           
+            <li class="service-container">
+                <div class="service-card">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <h3>Locales</h3>
+                    <p style="letter-spacing:2px">Contamos con más de 2 locales en todo Lima Metropolitana</p>
+                    <div class="learn-more-btn">Ver ubicaciones<i class="fas fa-long-arrow-alt-right"></i></div>
+                </div>
+                <div class="service-modal flex-center">
+                    <div class="service-modal-body">
+                        <i class="fas fa-times modal-close-btn"></i>
+                        <h3>Locales</h3>
+                        <h4>Nuestas Ubicaciones</h4>
+                        <div>
+                            <h2>SanFransisco73 - Ancon</h2>
+                        </div>
+                        <div>
+                            <h2>Save - Izaguirre</h2>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="service-container">
+                <div class="service-card">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <h3>Reservas</h3>
+                    <p style="letter-spacing:2px">Genera un cita virtual hoy y asiste sin problemas a nuestros locales.</p>
+                    <div class="learn-more-btn">Reservar un cita<i class="fas fa-long-arrow-alt-right"></i></div>
+                </div>
+                <div class="service-modal flex-center">
+                    <div class="service-modal-body">
+                        <i class="fas fa-times modal-close-btn"></i>
+                        <h3>Reservas</h3>
+                        <p>Estamos para ti <span>Reserva tu cita ya!!</span></p>
+                        <form action="" class="contact-form">
+                            <div class="first-row">
+                                <input type="email" placeholder="Correo">
+                            </div>
+                            <div class="second-row">
+                                <input type="text" placeholder="Nombre">
+                                <input type="text" placeholder="Sobre...">
+                            </div>
+                            <div class="third-row">
+                                <textarea name="message" id="" rows="7" placeholder="Mensaje"></textarea>
+                            </div>
+                            <button class="btn" type="submit">Mandar Mensaje <i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </li>
+            <li class="service-container">
+                <div class="service-card">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <h3>Horarios de atención</h3>
+                    <p style="letter-spacing:2px">
+                        Lun - Sab 10 am a 8:30 pm
+                    <br>
+                        Domingos 11 am a 5:30 pm
+                    </p>
+                    <div class="learn-more-btn">Contactanos<i class="fas fa-long-arrow-alt-right"></i></div>
+                </div>
+                <div class="service-modal flex-center">
+                    <div class="service-modal-body">
+                        <i class="fas fa-times modal-close-btn"></i>
+                        <h3>Horarios de atención</h3>
+                        <h4>Nuestro horario</h4>
+                        <p>
+                           Atencion de Lunes a domingo 
+                        </p>
+                    </div>
+                </div>
+            </li>
+                </ul>
     </section>
     <?php
     require 'views/footer.php';

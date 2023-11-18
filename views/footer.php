@@ -7,7 +7,10 @@
                             ¡Gracias por visitar San Fransisco 73! Esperamos que hayas disfrutado explorando nuestras opciones de cortes de cabello y servicios de barbería. 
                             Nos apasiona ofrecer a nuestros clientes las mejores experiencias de cuidado y estilo capilar. Siempre nos esforzamos por proporcionar un servicio 
                             excepcional y garantizar que cada visita sea única. Esperamos que hayas encontrado el corte o servicio que estabas buscando y que estés emocionado 
-                            por descubrir lo que [Nombre de la Barbería] tiene para ofrecer. Gracias de nuevo por visitarnos. Si tienes alguna pregunta o necesitas ayuda para
+                            por descubrir lo que San Fransisco 73 tiene para ofrecer. 
+                        </p>
+                        <p class="company__description">
+                            Gracias de nuevo por visitarnos. Si tienes alguna pregunta o necesitas ayuda para
                             planificar tu próximo corte o estilo, no dudes en contactarnos. ¡Te deseamos una experiencia capilar excepcional llena de estilo y confianza!"
                         </p>
                         <ul class="footer__list">
@@ -27,7 +30,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <span class="copyright">&copy;2023 Autor: Jorge Venegas.</span>
+                        <span class="copyright">&copy;2023 Derechos reservados: Save Barberia & Salon.</span>
                     </div>
                 </div>
             </div>
