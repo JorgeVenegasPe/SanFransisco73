@@ -1,34 +1,32 @@
-window.addEventListener("scroll", function(){
+// Función para añadir o quitar la clase "active" en los modales
+const toggleModal = (modalIndex, action) => {
+    serviceModals[modalIndex].classList[action]("active");
+};
+
+// Evento de scroll para el header pegajoso
+window.addEventListener("scroll", () => {
     const header = document.querySelector("header");
     header.classList.toggle("sticky", window.scrollY > 0);
 });
 
-const serviceModals = document.querySelectorAll(".service-modal");
-const learnmoreBtns = document.querySelectorAll(".learn-more-btn");
-const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
-
-var modal = function(modalClick){
-    serviceModals[modalClick].classList.add("active");
-}
-
+// Eventos para abrir modales
 learnmoreBtns.forEach((learnmoreBtn, i) => {
-    learnmoreBtn.addEventListener("click", () => {
-        modal(i);
-    });
+    learnmoreBtn.addEventListener("click", () => toggleModal(i, "add"));
 });
 
+// Eventos para cerrar modales
 modalCloseBtns.forEach((modalCloseBtn) => {
-    modalCloseBtn.addEventListener("click", () =>{
-        serviceModals.forEach((modalView)=>{
+    modalCloseBtn.addEventListener("click", () => {
+        serviceModals.forEach((modalView) => {
             modalView.classList.remove("active");
-        })
+        });
     });
 });
 
+// Botón de scroll hacia arriba
 const scrollToTopBtn = document.querySelector(".scrollToTop-btn");
-
-window.addEventListener("scroll", function(){
-    scrollToTopBtn.classList.toggle("active", window.scrollY >500);
+window.addEventListener("scroll", () => {
+    scrollToTopBtn.classList.toggle("active", window.scrollY > 500);
 });
 
 scrollToTopBtn.addEventListener("click", () => {
@@ -36,43 +34,40 @@ scrollToTopBtn.addEventListener("click", () => {
     document.documentElement.scrollTop = 0;
 });
 
+// Menú de navegación
+const toggleNavigation = () => navigation.classList.toggle("active");
 
-const menuBtn = document.querySelector(".nav-menu-btn");
-const closeBtn = document.querySelector(".nav-close-btn");
-const navigation = document.querySelector(".navigation");
-const navItems = document.querySelectorAll(".nav-items a");
-
-menuBtn.addEventListener("click", () => {
-    navigation.classList.add("active");
-});
-
-closeBtn.addEventListener("click", () => {
-    navigation.classList.remove("active");
-});
+menuBtn.addEventListener("click", toggleNavigation);
+closeBtn.addEventListener("click", toggleNavigation);
 
 navItems.forEach((navItem) => {
-    navItem.addEventListener("click", () => {
-        navigation.classList.remove("active");
-    });
+    navItem.addEventListener("click", toggleNavigation);
 });
 
+// Configuración de ScrollReveal
 ScrollReveal({
     distance: '60px',
     duration: 2500,
     delay: 100
 });
 
-ScrollReveal().reveal('.home .info h2, .section-title-01, .section-title-02',{ delay: 500, origin: 'left'});
-ScrollReveal().reveal('.home .info h3, .home .info p, .about-info .btn',{ delay: 600, origin: 'right'});
-ScrollReveal().reveal('.home .info .btn',{ delay: 700, origin: 'bottom'});
-ScrollReveal().reveal('.media-icons i, .contact-left li',{ delay: 500, origin: 'left', interval: 200});
-ScrollReveal().reveal('.home-img, .about-img',{ delay: 500, origin: 'bottom'});
-ScrollReveal().reveal('.about .description, .contact-right',{ delay: 600, origin: 'bottom'});
-ScrollReveal().reveal('.about .professional-list li',{ delay: 500, origin: 'right', interval: 200});
-ScrollReveal().reveal('.habilidades-description, .services-description, .contact-left h2',{ delay: 700, origin: 'left'});
-ScrollReveal().reveal('.experience-card, .service-card, .education',{ delay: 800, origin: 'bottom', interval: 200});
+const revealConfig = {
+    delay: 500,
+    origin: 'left',
+    interval: 200
+};
 
+// Elementos a revelar
+const elementsToReveal = [
+    '.home .info h2, .section-title-01, .section-title-02',
+    '.home .info h3, .home .info p, .about-info .btn',
+    '.home .info .btn',
+    '.media-icons i, .contact-left li',
+    '.home-img, .about-img',
+    '.about .description, .contact-right',
+    '.about .professional-list li',
+    '.habilidades-description, .services-description, .contact-left h2',
+    '.experience-card, .service-card, .education'
+];
 
-
-
-
+elementsToReveal.forEach((element) => ScrollReveal().reveal(element, revealConfig));

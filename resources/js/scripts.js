@@ -4,7 +4,6 @@ const flechaIzquierda = document.getElementById('flechaIzquierda');
 const flechaDerecha = document.getElementById('flechaDerecha');
 const capturaCanvas = document.getElementById('capturaCanvas');
 const canvasSection = document.getElementById('canvasSection');
-const servicesSection = document.getElementById('services');
 const opcionesContainer = document.getElementById('opcionesContainer');
 
 let isCaptured = false;
@@ -76,12 +75,14 @@ video.addEventListener('play', () => {
       const scaledWidth = overlayImage.width * scale;
       const scaledHeight = overlayImage.height * scale;
 
-      canvas.getContext('2d').drawImage(overlayImage, box.x, box.y, scaledWidth, scaledHeight);
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(overlayImage, box.x, box.y, scaledWidth, scaledHeight);
       capturarBtn.disabled = false;
     } else {
       capturarBtn.disabled = true;
     }
-  }, 100);
+  }, 500);  
 });
 
 flechaIzquierda.addEventListener('click', () => {

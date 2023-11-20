@@ -34,7 +34,29 @@
       <button class="capturarBtn" id="flechaDerecha">></button>
     </div>
   </section>
-  <script>
+ 
+<section class="services section" style="justify-content: center;display:none; padding:6em 3em" id="services">
+  <div class="container flex-center">
+      <h1 class="section01">Cortes recomendados por el tipo de rostro:</h1>
+      <h1 class="section02">Cortes recomendados por el tipo de rostro:</h1>
+      <div class="descrip-container">
+        <canvas class="video" id="capturaCanvas" width="400" height="710"></canvas>
+        <div class="info-descrip">
+          <h2 id="title"></h2>
+          <h3 id="sub-title"></h3>
+          <p id="descript"></p>
+        </div>
+      </div>
+      <h2 class="titulo">Cortes recomendados</h2>
+      <br>
+      <div class="services-container" id="listaCortes"></div>
+  </div>
+</section>
+
+<?php
+    require 'views/footer.php';
+    ?>
+     <script>
 capturarBtn.addEventListener('click', () => {
   if (!isCaptured) {
     // Captura la imagen
@@ -110,26 +132,5 @@ function enviarIdAlServidor(id) {
   xhr.send(`id=${id}`);
 }
 </script>
-<section class="services section" style="justify-content: center;display:none; padding:6em 3em" id="services">
-  <div class="container flex-center">
-      <h1 class="section01">Cortes recomendados por el tipo de rostro:</h1>
-      <h1 class="section02">Cortes recomendados por el tipo de rostro:</h1>
-      <div class="descrip-container">
-        <canvas class="video" id="capturaCanvas" width="400" height="710"></canvas>
-        <div class="info-descrip">
-          <h2 id="title"></h2>
-          <h3 id="sub-title"></h3>
-          <p id="descript"></p>
-        </div>
-      </div>
-      <h2 class="titulo">Cortes recomendados</h2>
-      <br>
-      <div class="services-container" id="listaCortes"></div>
-  </div>
-</section>
-
-<?php
-    require 'views/footer.php';
-    ?>
 </body>
 </html>
