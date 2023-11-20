@@ -27,15 +27,14 @@ images.forEach((imagen, index) => {
   opcionBtn.classList.add('opcionBtn');
   opcionBtn.innerHTML = `<img src="${imagen.path}" alt="${imagen.nombre}" width="70" height="70" />`;
 
-  // Agrega un evento clic para cambiar la imagen cuando se hace clic en el botón
   opcionBtn.addEventListener('click', () => {
     currentImageIndex = index;
     updateOverlayImage();
   });
 
-  // Agrega el botón al contenedor de opciones
   opcionesContainer.appendChild(opcionBtn);
 });
+
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri('models'),
   faceapi.nets.faceLandmark68Net.loadFromUri('models'),
@@ -43,16 +42,15 @@ Promise.all([
   faceapi.nets.faceExpressionNet.loadFromUri('models')
 ]).then(() => {
   overlayImage.src = images[currentImageIndex].path;
-  console.log('Imagen actual:', images[currentImageIndex].id); // Cambiado de .id a .path
+  console.log('Imagen actual:', images[currentImageIndex].id);
   startVideo();
-})
+});
 
 function startVideo() {
   navigator.getUserMedia(
     { video: {} },
     stream => {
       video.srcObject = stream;
-      // Habilitar el botón capturar solo cuando la cámara está lista
       capturarBtn.disabled = false;
     },
     err => console.error(err)
@@ -66,22 +64,24 @@ video.addEventListener('play', () => {
   const displaySize = { width: video.width, height: video.height };
   faceapi.matchDimensions(canvas, displaySize);
 
-  overlayImage.onload = () => {
-    setInterval(async () => {
-      const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions();
-      const resizedDetections = faceapi.resizeResults(detections, displaySize);
+  setInterval(async () => {
+    const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions();
+    const resizedDetections = faceapi.resizeResults(detections, displaySize);
 
-      canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+    canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
 
-      if (detections.length > 0) {
-        const box = resizedDetections[0].detection.box;
-        canvas.getContext('2d').drawImage(overlayImage, box.x, box.y, box.width, box.height);
-        capturarBtn.disabled = false;
-      } else {
-        capturarBtn.disabled = true;
-      }
-    }, 100);
-  };
+    if (detections.length > 0) {
+      const box = resizedDetections[0].detection.box;
+      const scale = box.width / overlayImage.width;
+      const scaledWidth = overlayImage.width * scale;
+      const scaledHeight = overlayImage.height * scale;
+
+      canvas.getContext('2d').drawImage(overlayImage, box.x, box.y, scaledWidth, scaledHeight);
+      capturarBtn.disabled = false;
+    } else {
+      capturarBtn.disabled = true;
+    }
+  }, 100);
 });
 
 flechaIzquierda.addEventListener('click', () => {

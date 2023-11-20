@@ -846,8 +846,6 @@ header.sticky .nav-bar{
   }
   .video-captado canvas {
     position: absolute;
-    height: 760px;
-    width: 380px;
   }
     .video {
     border-radius: 20px;
